@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Printer-rest?</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+     body { 
+            background-color: #0D1717; 
+            padding-top: 70px;
+    }
+
+     h1 {
+            color: #239884;
+        }
+
+  .navbar .nav-link {
+        color: #dcdfdf !important;
+        margin: 0 5px;
+        transition: color 0.3s ease;
+    }
+    
+    .navbar .nav-link:hover {
+        color: #239884 !important;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+   .dropdown-menu {
+        background-color: #11352f !important;
+        border: 1px solid #239884 !important;
+        margin-top: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+    
+    .dropdown-item {
+        color: #dcdfdf !important;
+        padding: 0.5rem 1.5rem;
+        transition: all 0.2s ease;
+    }
+    
+    .dropdown-item:hover, .dropdown-item:focus {
+        background-color: #0D1717 !important;
+        color: #239884 !important;
+    }
+    
+    .dropdown-divider {
+        border-color: #239884 !important;
+        margin: 0.25rem 0;
+    }
+    
+    .card {
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #11352f;
+         }
+
+    
+    
+        .card-img-top {
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .card-body {
+            padding: 15px;
+        }
+        
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #dcdfdf;
+        }
+
+
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(35, 152, 132, 0.3);
+        z-index: 10;
+    }
+    
+    .card-img-top {
+        object-fit: cover;
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover .card-img-top {
+        transform: scale(1.03);
+    }
+    
+    
+    
+    .card:hover .btn-save {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+        
+
+
+        .btn-save {
+            background-color: #129696; 
+            color: white;
+            border-radius: 20px;
+            font-weight: 600;
+            padding: 5px 15px;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+        
+        .btn-save:hover {
+            background-color: #004d40; 
+            color: white;
+        }
+        
+       footer{
+          padding: 1rem 0;
+          color: #00796b;
+          border-top: 1px solid #00796b;
+
+       }
+        .card-columns {
+            column-count: 5;
+        }
+        /* i used media queries sir so i can control how many columns of cards are displayed based on the 
+        width of the screen hehehehehhehehe */
+        @media (max-width: 1200px) {
+            .card-columns {
+                column-count: 4;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .card-columns {
+                column-count: 3;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .card-columns {
+                column-count: 2;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .card-columns {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #11352f; border-bottom: 1px solid #239884;">
+    <div class="container">
+        <a class="navbar-brand mx-auto" href="#" style="font-weight: bold; color: #239884;">
+            <i class="fas fa-thumbtack mr-2"></i>Printer-rest?
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"  >
+            <span class="navbar-toggler-icon">
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Create</a>
+                </li>
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Collections
+                </a>
+                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                         <a class="dropdown-item" href="#">My Saves</a>
+                            <a class="dropdown-item" href="#">Trending</a>
+                    <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">New Collection</a>
+                    </div>
+                    </li>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container" style="margin-top: 20px;">
+    <h1 class="text-center mb-4">Printer-rest?</h1>
+    <div class="card-columns">
+      
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="pinterest images/hanni.jpg" class="card-img-top" alt="Image 1">
+            <div class="card-body">
+                <h5 class="card-title">Hanni shock</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="pinterest images/Unemployed.jpg" class="card-img-top" alt="Image 2">
+            <div class="card-body">
+                <h5 class="card-title">Me</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="pinterest images/uhm actually.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">uhmm actuallyyy</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 4-->
+        <div class="card">
+            <img src="pinterest images/mclaren.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title"> McLaren 765LT</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+
+        <!-- Card 5-->
+        <div class="card">
+            <img src="pinterest images/shinji.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Shinji at the Gym</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 6-->
+        <div class="card">
+            <img src="pinterest images/Vergil.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Vergil DMC 5</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 7-->
+        <div class="card">
+            <img src="pinterest images/Lady.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Lady DMC</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 8-->
+        <div class="card">
+            <img src="pinterest images/dante.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Dante DMC 3</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 9-->
+        <div class="card">
+            <img src="pinterest images/asa.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Asa Enami (Babymonster)</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 10-->
+        <div class="card">
+            <img src="pinterest images/lego.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Lego</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 11-->
+        <div class="card">
+            <img src="pinterest images/tekken 8.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Tekken 8 X Gentle Monster</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 12-->
+        <div class="card">
+            <img src="pinterest images/evelyn.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Evelyn Baldurs Gate</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 13-->
+        <div class="card">
+            <img src="pinterest images/Kendrick.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Kendrick Lamar</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 14-->
+        <div class="card">
+            <img src="pinterest images/mobpsycho.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Mob Psycho 100</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 15-->
+        <div class="card">
+            <img src="pinterest images/penguin.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Penguin 😧</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 16-->
+        <div class="card">
+            <img src="pinterest images/room.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Dark Room Decor</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 17-->
+        <div class="card">
+            <img src="pinterest images/batman.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Batman Arkham Knight</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 18-->
+        <div class="card">
+            <img src="pinterest images/miles.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Leap of Faith</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 19-->
+        <div class="card">
+            <img src="pinterest images/stussy.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Stussy</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+        <!-- Card 20-->
+        <div class="card">
+            <img src="pinterest images/minecraft.jpg" class="card-img-top" alt="Image 3">
+            <div class="card-body">
+                <h5 class="card-title">Minecraft Edit</h5>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <footer class="text-center">
+      <p>&copy; All Rights Reserved 2025</p>
+    </footer>
+    
+  </div>
