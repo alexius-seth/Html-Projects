@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="portfolio.html">
+                <i class="fas fa-code"></i> Alexius Seth
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portfolio.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hobbies.html">Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fade-in-up">Get In Touch</h2>
+                <p class="lead fade-in-up">Let's connect and build something amazing together</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-card fade-in-up">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Contact Information</h4>
+                                <div class="mb-3">
+                                    <i class="fas fa-envelope text-primary mr-2"></i>
+                                    <strong>Email:</strong> alexiussetha@gmail.com
+                                </div>
+                                <div class="mb-3">
+                                    <i class="fas fa-phone text-primary mr-2"></i>
+                                    <strong>Phone:</strong> (555) 123-4567
+                                </div>
+                                <div class="mb-3">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                    <strong>Location:</strong> Perez Blvd, Dagupan City
+                                </div>
+                                
+                                <h5 class="mt-4">Useful Resources</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="https://github.com" target="_blank" class="text-decoration-none">
+                                        <i class="fab fa-github text-primary mr-2"></i>GitHub
+                                    </a></li>
+                                    <li><a href="https://stackoverflow.com" target="_blank" class="text-decoration-none">
+                                        <i class="fab fa-stack-overflow text-primary mr-2"></i>Stack Overflow
+                                    </a></li>
+                                    <li><a href="https://w3schools.com" target="_blank" class="text-decoration-none">
+                                        <i class="fas fa-graduation-cap text-primary mr-2"></i>W3Schools
+                                    </a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <h4>Send a Message</h4>
+                                <form id="contactForm">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Your Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary-custom w-100">
+                                        <i class="fas fa-paper-plane"></i> Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">© 2025 Alexius Seth. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        
+        // Contact form handling
+        $('#contactForm').on('submit', function (e) {
+            e.preventDefault();
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var message = $('#message').val();
+            if (name && email && message) {
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+    </script>
+
+</body>
+</html>
