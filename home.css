@@ -237,7 +237,7 @@ body {
     font-weight: 600;
 }
 
-/* Sidebar Sections */
+
 .sidebar-section {
     background: #fff;
     padding: 30px;
@@ -389,7 +389,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .header-overlay h1 {
         font-size: 2rem;
