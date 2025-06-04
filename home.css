@@ -193,7 +193,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* New About Me Section */
 .about-me-section {
     background: #fff;
     padding: 50px;
@@ -205,6 +204,27 @@ body {
     width: 90%;
     grid-column: 1 / -1;
 }
+
+.know-more-btn {
+  margin-top: 1em;
+  text-decoration: none;
+  padding: 0.6em 1.5em;
+  background: #ffb347;
+  color: #222;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(255,179,71,0.15);
+  }
+
+.know-more-btn:hover {
+  background: #ffa500;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255,179,71,0.25);
+  }
 
 .about-me-section .section-title {
     font-size: 1.8rem;
@@ -237,7 +257,7 @@ body {
     font-weight: 600;
 }
 
-
+/* Sidebar Sections */
 .sidebar-section {
     background: #fff;
     padding: 30px;
